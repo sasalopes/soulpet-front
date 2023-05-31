@@ -1,0 +1,149 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/pagination";
+
+:root {
+  /* Início da página */
+  --background: #ffffff; /* Criando variáveis de CSS */
+  --title: black;
+  --button: #ffffff;
+  --divider: #000000;
+  --text: #000000;
+  --formLabel: #000000;
+}
+
+h1 {
+  color: #3b2712;
+}
+
+form {
+    background-color: #f2f7cc;
+    
+    padding: 20px;
+    border: 1px solid #f2f7cc;
+    border-radius: 5px;
+}
+
+
+@import "~bootstrap/scss/variables";
+
+$theme-colors: (
+  "info": #d6c9c0,
+  "danger": #a69e69,
+  "success": #57615e,
+  "dark": #3b2712,
+  "primary": #a69e69,
+  "warning": #3b2712,
+  "light":  #f2f7cc,
+);
+
+$theme-colors-text: (
+  "info": #d6c9c0,
+  "danger": #a69e69,
+  "success": #57615e,
+  "dark": #3b2712,
+  "primary": #c9d18c,
+  "warning": #3b2712,
+  "light":  #f2f7cc,
+);
+
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+
+$theme-colors-background: (
+  "info": #d6c9c0,
+  "danger": #3b2712,
+  "success": #57615e,
+  "dark": #57615e,
+  "primary": #c9d18c,
+  "warning": #3b2712,
+  "light":  #f2f7cc,
+);
+
+.btn-danger {
+  // Use a sombra padrão para os botões que não têm uma sombra personalizada
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06), 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+
+  @each $color, $value in $theme-colors {
+    &.btn-#{$color} {
+      background-color: $value;
+      box-shadow: 0 1px 0 0.05rem rgba(0, 0, 0, 0.15),
+        0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+      &:hover,
+      &:focus {
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06),
+          0 0.5rem 1.5rem rgba($value, 0.5);
+        background-color: darken($value, 10%);
+      }
+    }
+  }
+}
+
+.btn-primary {
+  // Use a sombra padrão para os botões que não têm uma sombra personalizada
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06), 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+
+  @each $color, $value in $theme-colors {
+    &.btn-#{$color} {
+      background-color: $value;
+      box-shadow: 0 1px 0 0.05rem rgba(0, 0, 0, 0.15),
+        0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+      &:hover,
+      &:focus {
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06),
+          0 0.5rem 1.5rem rgba($value, 0.5);
+        background-color: dark($value, 10%);
+      }
+    }
+  }
+}
+
+.btn-light {
+  // Use a sombra padrão para os botões que não têm uma sombra personalizada
+  box-shadow: 0 1px 0 #a69e69(0, 0, 0, 0.06),
+    0 0.25rem 0.5rem #a69e69(0, 0, 0, 0.15);
+
+  @each $color, $value in $theme-colors {
+    &.btn-#{$color} {
+      background-color: $value;
+      box-shadow: 0 1px 0 0.05rem #a69e69(0, 0, 0, 0.15),
+        0 0.5rem 1rem #a69e69(0, 0, 0, 0.15);
+
+      &:hover {
+        background-color: #a69e69;
+      }
+      &:focus {
+        box-shadow: 0 1px 0 #a69e69(0, 0, 0, 0.06),
+          0 0.5rem 1.5rem rgba($value, 0.5);
+        background-color: primary($value, 10%);
+      }
+    }
+  }
+}
+
+/* Estilizando a tabela com a classe "table" */
+.table {
+  background-color: var(
+    --background
+  ); /* Aplicando a cor de fundo definida no :root */
+  color: var(--text); /* Aplicando a cor do texto definida no :root */
+  border-radius: 10px;
+
+  /* Estilos para a variante "striped" */
+  &.table-striped {
+    tbody tr:nth-of-type(odd) {
+      background-color: #f2f7cc; /* Cor de fundo para linhas ímpares */
+    }
+  }
+
+  /* Estilos para a variante "hover" */
+  &.table-hover tbody tr:hover {
+    background-color: #d6c9c0; /* Cor de fundo para a linha que está sendo hover */
+  }
+}
+
+// @import "../node_modules/bootstrap/scss/bootstrap";
+
+@import "~bootstrap/scss/bootstrap";

@@ -1,0 +1,23 @@
+.container-formulario{
+    padding: 2.5%;
+    background-color: rgb(222, 222, 215);
+}
+
+.img-form{
+    padding-top: 2%;
+    align-items: center;
+}
+
+.botao-form{
+    background-color:#3B2712;
+    border-color: #3B2712;
+    width: 100%;
+}
+
+.titleForm{
+    padding-top: 5%;
+}
+
+.formAdd{
+    padding-top: 5%;
+}
